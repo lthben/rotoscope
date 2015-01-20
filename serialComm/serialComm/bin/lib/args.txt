@@ -1,3 +1,0 @@
-
-serialCommEncoder
-serialCommEncoder.jar,core.jar,net.jar,serial.jar,RXTXcomm.jar

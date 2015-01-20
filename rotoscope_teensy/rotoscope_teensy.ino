@@ -9,10 +9,10 @@ Author: Benjamin Low
 
 //#define sensorPin 14 //for testing pot
 #define sensorPin 16 //to actual LRF sensor
-#define ledPin 6
+//#define ledPin 6
 
 int sensorReading;
-const int NUM_READINGS = 50; //number of readings to average. The higher the number, the more stable the reading subject to CPU latency.
+const int NUM_READINGS = 20; //number of readings to average. The higher the number, the more stable the reading subject to CPU latency.
 const long SAMPLING_TIME_INTERVAL = 100; //time interval between each reading output in milliseconds to avoid the use of delay()
 long prev_time; //the last time a reading was reported 
 int readings [NUM_READINGS];
@@ -20,7 +20,7 @@ int array_index;
 int sum_of_readings;
 
 void setup() {
-        pinMode(ledPin, OUTPUT);
+       // pinMode(ledPin, OUTPUT);
         pinMode(sensorPin, INPUT);
 
         Serial.begin(9600);
@@ -30,7 +30,7 @@ void setup() {
 
         analogReadAveraging(100); //set to average of X readings
 
-        digitalWrite(ledPin, HIGH);
+        //digitalWrite(ledPin, HIGH);
 }
 
 void loop(){
