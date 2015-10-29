@@ -1,6 +1,6 @@
 /*
 Author: Benjamin Low
- Last updated: 7 Oct 2015
+ Last updated: 29 Oct 2015
  Description: Simple ADC read from rotoscope
  by the Teensy 3.1
  */
@@ -25,7 +25,7 @@ void setup() {
 void loop(){
 
         sensorReading = analogRead(sensorPin);
-        sensorReading = map(sensorReading, 0, 4096, 200, 10000); //from 10 bit ADC resolution to sensor reading in mm 
+//        sensorReading = map(sensorReading, 0, 4096, 200, 10000); //from 10 bit ADC resolution to sensor reading in mm 
 
         Serial.println(sensorReading);
 
