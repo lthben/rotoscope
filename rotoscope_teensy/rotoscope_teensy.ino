@@ -29,7 +29,7 @@ void loop(){
 
         Serial.println(sensorReading);
 
-        //delay(100); //for debugging only
+        delay(15); //prevent possible choking at the Processing bridge
 }
 
 
