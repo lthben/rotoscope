@@ -1,8 +1,7 @@
 /*
 Author: Benjamin Low
- Last updated: 7 Oct 2015
- Description: Simple ADC read from rotoscope
- by the Teensy 3.1
+ Last updated: 30 Oct 2015
+ Description: Simple ADC read from rotoscope by the Teensy 3.1
  */
 
 #include <analog.c>
@@ -12,27 +11,21 @@ Author: Benjamin Low
 int sensorReading;
 
 void setup() {
-        pinMode(sensorPin, INPUT);
+  pinMode(sensorPin, INPUT);
 
-        Serial.begin(9600);
-        Serial.flush();
+  Serial.begin(9600);
+  Serial.flush();
 
-        analogReadRes(12); //set to X bit resolution
+  analogReadRes(12); //set to X bit resolution
 
-        analogReadAveraging(100); //set to average of X readings
+  analogReadAveraging(32); //set to average of 32 readings
 }
 
-void loop(){
+void loop() {
 
-        sensorReading = analogRead(sensorPin);
-        sensorReading = map(sensorReading, 0, 4096, 200, 10000); //from 10 bit ADC resolution to sensor reading in mm 
+  Serial.println(analogRead(sensorPin));
+  delay(20); //need to add some delay to avoid choke at bridge program
 
-        Serial.println(sensorReading);
-
-        delay(15); //prevent possible choking at the Processing bridge
 }
-
-
-
 
 
